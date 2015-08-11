@@ -1,0 +1,23 @@
+body {
+  /*background: red;*/
+}
+
+p {
+  color: blue;
+}
+
+div {
+  border: 1px solid black;
+}
+
+#blue-div {
+  background-color:blue;
+}
+
+.green-div {
+  background-color: green;
+}
+
+#text-align {
+  text-align:right;
+}
