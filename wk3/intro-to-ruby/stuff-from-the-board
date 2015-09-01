@@ -1,0 +1,22 @@
+[8] pry(main)> sweets = Array.new
+=> []
+[9] pry(main)> fruits.length(main)> fruits.length
+=> 3
+[10] pry(main)> fruits.any?
+=> true
+[11] pry(main)> sweets.any?
+=> false
+[12] pry(main)> sweets.push('cola bottle')
+=> ["cola bottle"]
+[13] pry(main)> sweets.unshift('milk bottle')
+=> ["milk bottle", "cola bottle"]
+[14] pry(main)> sweets.insert(1, 'button')
+=> ["milk bottle", "button", "cola bottle"]
+[15] pry(main)> sweets.insert(1, strawberry)
+NameError: undefined local variable or method `strawberry' for main:Object
+from (pry):15:in `__pry__'
+[16] pry(main)> sweets.insert(1, 'strawberry')
+=> ["milk bottle", "strawberry", "button", "cola bottle"]
+[17] pry(main)> sweets.index('button')
+
+Look uo intersect
