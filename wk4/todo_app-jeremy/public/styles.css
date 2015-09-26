@@ -1,0 +1,30 @@
+button.fake-link, button.fake-link:focus, button.fake-link:active {
+    /* Remove all decorations to look like normal text */
+    background: none;
+    border: none;
+    display: inline;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    outline-offset: 0;
+    /* Additional styles to look like a link */
+    color: #ffab40;
+    cursor: pointer;
+    -webkit-transition: color .3s ease;
+    -moz-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    -ms-transition: color .3s ease;
+    transition: color .3s ease;
+    text-transform: uppercase;
+}
+
+button.fake-link:hover {
+  color: #ffd8a6; 
+}
+
+/* Remove extra space inside buttons in Firefox */
+button.fake-link::-moz-focus-inner {
+    border: none;
+    padding: 0;
+}

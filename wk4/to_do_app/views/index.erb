@@ -1,0 +1,7 @@
+<h2><%= @header_index %></h2>
+
+<% @task_list.each do |task| %>
+  <p><a href="/<%= task['item'] %>"><%= task['item'] %></a></p>
+<% end %>
+
+<a href="/create"><button>create</button></a>

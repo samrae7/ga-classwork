@@ -1,0 +1,9 @@
+<h1><%=@song.title%></h1>
+
+
+<p>Albums that this song is on:</p>
+<ul>
+  <% @song.albums.each do |album| %>
+    <li><%= link_to(album.name, album) %></li>
+  <% end %>
+</ul>

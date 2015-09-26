@@ -1,0 +1,15 @@
+<%= form_for @song do |form| %>
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div class="field">
+    <%= form.label :artist_id %>
+    <%= form.select :artist_id, options_from_collection_for_select(@artists, 'id','name') %>
+   <!--  ?f.collection)select (:artist_id,  -->)
+  </div>
+
+  <div class="action">
+    <%= form.submit 'New Song' %>
+  </div>
+<% end %>

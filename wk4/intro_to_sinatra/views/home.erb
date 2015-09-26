@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> <%= @name %>'s homepage</title>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+  <h1><%= @name %>'s homepage</h1>
+  <img src=<%=@profile_pic%> alt='@name'>
+  <ul>
+  <% @data[:hobbies].each do |hobby| %>
+    <li><%= hobby %></li>
+  <% end %>
+  </ul>
+</body>
+</html>

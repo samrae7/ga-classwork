@@ -1,4 +1,4 @@
-require_relative '../lib/bike'
+require_relative './spec_helper'
 
 # describing functionality of the specific class Bike
 describe Bike do
