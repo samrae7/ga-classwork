@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="happyApp">
+<head>
+  <meta charset=="UTF-8">
+  <title>Happy App</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/happyController.js"></script>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body ng-controller="HappyController as happy">
+  <h1>Happy App</h1>
+
+  <section ng-repeat="emotion in happy.emotions track by $index">
+
+   
+    <i class="fa fa-smile-o fa-5x" ng-if="emotion==1"></i>
+    <i class="fa fa-meh-o fa-5x" ng-if="emotion==0"></i>
+    <i class="fa fa-frown-o fa-5x" ng-if="emotion==-1"></i>
+   
+
+  </section>
+
+  <form ng-submit="happy.add()">
+    <i class="fa fa-smile-o fa-5x"></i>
+    <label  for="happy">Happy</label>
+    <input name="emotion" value=1 id="happy", type="radio" ng-model="happy.newEmotion">
+
+    <i class="fa fa-meh-o fa-5x"></i>
+    <label for="neutral">Neutral</label>
+    <input name="emotion" value=0 id="neutral" type="radio" ng-model="happy.newEmotion">
+
+    <i class="fa fa-frown-o fa-5x"></i>
+    <label for="sad">Sad</label>
+    <input name="emotion" value=-1 id="sad" type="radio" ng-model="happy.newEmotion">
+
+    <input type="submit">
+  </form>
+  
+</body>
+</html>

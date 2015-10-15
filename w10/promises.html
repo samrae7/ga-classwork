@@ -1,0 +1,52 @@
+
+<html>
+  <head>
+    <title>James</title>
+  </head>
+  <body>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+      // initial value set at 
+      var name = '';
+      // our canonical async function
+      function async() {
+        // set up our promise
+        var deferred = $.Deferred();
+        // this is where we go off and get our data from wherever
+        this.name = 'James';
+        // not a real world example using timeout but you should get the picture
+        // 5 second timeout to simulate an API call
+        setTimeout(function() {
+          // the resolve would be in the success part of your response
+          deferred.resolve(name);
+        }, 5000)
+        // you would also want to do deferred.reject(error); in the error part of your response
+        // return the promise
+        return deferred.promise();
+      };
+      // this will be blank as JavaScript is synchronous and it's still the value from line 9
+      console.log(name);
+      // Just so you can see the async function is a promise object
+      console.log(async());
+      // async is now called and will go off and do it's thing and when it gets it's response after 5 seconds it will log it out
+      async().then(function(response) {
+        console.log(response);
+      }).then(function() { // promise chaining
+        console.log('and this will come after');
+      }).then(function() { // promise chaining
+        console.log('and this will be last');
+      });
+      // the above is all well and good but it's not very good code as it doesn't handle errors.
+      // this is better...
+      async().then(function(response) { // first function call of the promise if the successful one
+        console.log('SUCCESS!');
+      }, function() { // the second is the error
+        console.log('FAIL!');
+      }).then(function() { // success!
+        console.log('SUCCESS!');
+      }, function() { // error!
+        console.log('FAIL!');
+      });
+    </script>
+  </body>
+</html>

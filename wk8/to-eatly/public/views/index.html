@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ToEat.ly</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.3/mustache.js'></script>
+  
+</head>
+<body>
+  <div id="page-wrapper" class="well">
+    <header class="page-header">
+      <h1>ToEat.ly <small>Put it in my belly!</small></h1>
+    </header>
+    <form id="food-form" class="form-inline">
+      <input name="name" type="text" class="form-control" id="new-food" placeholder="Name of food">
+      <input name="yumminess" class="form-control" placeholder="How yummy?">
+      <button type="submit" class="btn btn-default">Add food</button>
+    </form>
+    <ul class="list-group" id="food-ul">
+      <script id="template" type="x-tmpl-mustache">
+          <li class="list-group-item">{{foodname}}<span class="label label-default">{{ yumminess }}</span>
+            <button data-id={{ foodid }} type="button" class="js-close close" aria-label="Close"><span aria-hidden="true"></span>
+            </button>;
+          </li>
+      </script>
+
+
+
+
+
+    </ul>
+  </div>
+</body>
+</html>

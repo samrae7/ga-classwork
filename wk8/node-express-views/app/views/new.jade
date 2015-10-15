@@ -1,0 +1,10 @@
+html
+  head
+    title!= Hello
+  body
+    h1!= message
+
+   form(name="new-quote", action="/quotes", method="post")
+      input(type="text", name="text")
+      input(type="text", name="author")
+      input(type="submit", value="submit quote")

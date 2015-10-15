@@ -1,0 +1,6 @@
+<div class='scores' ng-controller="playersController as players">
+  <h2>Scores</h2>
+  <ul class="list-group">
+    <li ng-class="list-group-item" ng-repeat="player in players.all" >{{player.name}} <span class="badge">{{player.points}}</span></li>
+  </ul>
+</div>

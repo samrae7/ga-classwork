@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <base href="/"></base>
+  <title>Infamous Criminals</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/criminalsController.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-app='InfamousCriminals' ng-controller='CriminalsController as criminals'>
+
+  <h1>Infamous Criminals</h1>
+  <div ng-include="'navbar.html'"></div>
+  <div ui-view></div>
+
+
+</body>
+</html>

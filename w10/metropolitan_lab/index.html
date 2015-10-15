@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='museumApp'>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="js/exhibitController.js"></script>
+  <script src="js/infoController.js"></script>
+  <script src="js/donorController.js"></script>
+</head>
+<body>
+  <h1>Metropolitan Museum of Art</h1>
+  <section ng-controller='ExhibitController as exhibit'>
+    <h2>Exhibit:</h2>
+    <img ng-src='{{ exhibit.image }}'>
+    <h3>{{  exhibit.title }} </h3>
+    <p>{{ exhibit.summary }} </p>
+  </section>
+  <hr>
+  <section ng-controller='InfoController as info'>
+    <h2>General information</h2>
+    <h1>Hours</h1>
+    <ul>
+      <li ng-repeat="(key,value) in info.hours">{{key}} - {{value}}</li>
+    </ul>
+    
+  </section>
+  
+</body>
+</html>

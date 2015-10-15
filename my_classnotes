@@ -1,0 +1,858 @@
+###GA WDI NOTES
+
+annonymous functions are not hoisted in javascript
+
+get input value with method .value
+
+####WEEK2
+
+OOP - look up literal vs constructor notation for creating an object
+
+Questions - 
+1/ is carFactory a constructor ?
+2/ is it significant that we declare carFactory with anonymous function?
+
+I created carFactory and then used it to create two objects but I forgot to 'assign var car1 =‘ so they are nameless. What happens to these objects? Can I access them afterwards
+
+getPrototypeOf(value) - returns prototype of that type of variable e.g., string, number, boolean, array, object etc
+
+WEEK 2 DAY 2
+
+’THIS'
+
+cannot refer to a function that it is in
+
+refers to a ‘callsite'
+
+CALLBACKS
+
+ITERATORS
+
+//ARRAY ITERATORS
+ some
+ each
+ map
+ reduce
+ filter
+ every
+
+
+HOMEWORK
+
+
+Start  with an input box ? (but try drop down)
+
+Start with one metro line and get that working 
+
+Start with listing all the stops in the second drop down but then try as a bonus try to filter.
+
+Use pen and paper to thin through the logic
+
+Return number of stops and whether you have to change
+
+Related to the whole course.
+
+WEEK 2 DAY 3
+JAVASCRIPT
+Event delegation
+
+WEEL2 DAY4
+Struggled with the GA bank homework last night because I didn’t use any objects.
+
+Today look at the lesson on objects, constructors and prototypes, literal vs constructor notation.
+
+One way of looking at it is that you use literal notation when you only need to create objects 'by hand’. The constructor is used when you know you’ll need to create lots of objects of a similar type, You can also assign variables and methods to the prototype so that certain functions and variable are ‘inbuilt’.
+
+
+The thing I don’t quite understand why you would do this ( put things in the prototype) because you can just have them in the constructor. My answer would be that if things don’t change from person to person they may as well be in the prototype as you don’t need to assign them different values each time.
+
+
+WEEK 2 DAY 5
+
+Jquery/JS code along wit Gui and Jen
+Why would we create everything using the JS? 
+
+Didn’t know that we can create an element like this
+
+var leftDiv = $(‘<div>’);
+
+
+WEEK 3 DAY 5
+RUBY
+
+arrays:
+compact
+flatten
+
+hash
+.keys
+.values
+
+(Homework- look up ‘to_sym’ and intersection)
+
+BLOCKS
+
+Iterating using .times and local variable in a pipe
+
+10.times do |number|
+	puts “the number is #{number}”
+end
+
+method .upto .downto
+
+enumerable methods
+
+[36] pry(main)> def print_name(name)
+
+[36] pry(main)*   print "#{name} "
+
+[36] pry(main)* end  
+
+=> :print_name
+
+[37] pry(main)> print_name('Sam')
+
+Sam => nil
+
+
+
+shortcur for creating an array
+
+names =%w(fred,wilma,barney,bambam)
+
+
+
+[38] pry(main)> names =%w(fred,wilma,barney,bambam)
+=> ["fred,wilma,barney,bambam”]
+
+one way of iterating over
+
+[39] pry(main)> for i in 0..names.length
+[39] pry(main)*   print_name(names[i])
+[39] pry(main)* end  
+fred,wilma,barney,bambam  => 0..1
+
+
+OR
+
+[40] pry(main)> names.each { |name| print_name(name) }
+fred,wilma,barney,bambam => ["fred,wilma,barney,bambam"]
+[41] pry(main)> 
+
+
+(1..10) #shortcut for creating a range
+
+
+
+
+
+(1..10).to_a # makes an array
+
+
+
+array method - each with index
+
+.map
+
+.detect - returns the first value that matches cnodition
+
+WEEK5
+
+
+### DAY 1
+
+
+AJAX 
+
+use for dynamic apps
+JS XMLHTTPREQUEST
+Manipulate JSON DATA
+Callbacks
+
+
+DAY 3
+
+active record - cleaner way of updating database without having to write SQL
+
+
+RAILS
+
+Set up new app
+
+1/ 
+rails new Blog
+
+rails new routes_and_controllers -d postgresql -T -B
+
+(-B skips bundle install)
+
+2/
+rails generate model Post
+//creates migration file  and model.rb file
+
+(OR touch app/controllers/home_controller.rb
+)
+
+//MODELS ARE SINGULAR
+//CONTROLLERS ARE PLURAL
+
+//put table  columns in the migration at the same time: 
+
+rails generate model Post author title body:text
+
+can add extra stuff.edit etc in the migration before you run it
+
+3/ 
+
+NB: can do create and migrate on one line//
+
+rake db:migrate
+
+//should get an error saying database does not exist
+
+//so run 
+
+rake db:create 
+
+//( from within the folder. Rails takes the name from the project and adds _development - convention over configuration)
+
+4/ 
+//create controller
+
+rails generate controller posts
+
+// NB: PLURAL
+
+
+5/
+
+create 
+index.html.erb view 
+
+file within views/posts(?)
+
+routes are handled within the routes.rb file (post controller) so inside there you specify
+
+get ‘posts’ => ‘posts#index'
+
+6/ Start the server
+
+rails server ( from within the directory)
+
+7/ Create a method within the posts contoller
+
+def index
+end
+
+8/
+
+//Create a view posts/index
+
+//Don’t fight rails. Convention over configuration.
+
+========
+
+//Cool command :
+
+rake routes
+
+//shows all routes
+
+=========
+//Shortcut - within the routes files
+
+resources :posts
+
+//creates all the restful routes for posts. add more for other classes/models
+
+=====
+
+Use rails.console to type active records commands etc
+
+<<LUNCH>>
+
+
+ROUTING IN RAILS
+
+1/ Custom routes vs resources
+2/ Actions, Restful, controller
+
+MVC
+
+Model  - handles business logic, models the database
+
+Controller - Routing, link between Model and View
+
+Views - display info in pretty format
+
+Fat model rather than fat controller. Controller should be 10 lines max
+
+=
+
+looked at pluraliser - can use it in console to check plural/singular
+
+=
+
+rails c - shortcut for rails console
+
+======
+
+###DAY 5
+
+HOMEWORK REVIEW
+
+USE FORM HELPERS ( look up ‘link_to’!!!)
+
+
+ACTIONVIEW METHODS
+
+LINK HELPERS
+
+<%= link_to ‘Google’, ‘http:www.google.com class 'google-link'%>
+
+or
+
+<%= link_to ‘Home', root_path %>
+
+or 
+<%=link_to ‘New Article’, new_article_path %>
+
+for ‘dynamic’ link
+
+<%= link_to ‘Edit', edit_article_path(@article) %>
+//gets @article from the instance variable
+
+<% link_to ‘Delete’, @article, method: :delete %>
+
+Within a certain context you can just write 
+
+link_to article.title, article  //(Ruby knows to put in the path for that object)
+
+
+VIEW HELPERS
+
+TRUNCATE
+
+truncate - use on a view page to limit the number of characters you can see rom a certain column. Can include a link to link_to
+
+
+VALIDATION
+
+Put inside the model
+
+validates :author,  :presence true
+
+use a bang on your method, e.g. author.save! otherwise exception will not be thrown
+
+in pry-rails can use methods a.valid a.errors etc
+
+RAILS FLASH - can send messages to the view eg. “Article created successfully’
+
+MIGRATION
+
+Remove a column
+rails g migration RemoveNameFromCustomers name:string
+
+//lunch
+
+###ASSOCIATIONS
+
+BELONGS TO *
+HAS ONE
+HAS MANY *
+——
+HAS MANY, THROUGH *
+HAS ONE, THROUGH
+——
+HAS AND BELONGS TO MANY (not covered in this course)
+
+(* will use these the most)
+
+After you have specified in your model that one model belongs to another, you can just run a method e.g. customer1.orders to find the instances that belong to that instance Uses a naming convention e.g. customer_id ( tells the order that it should look in customers). The method returns an object that you can iterate over.
+
+Then you can chain commands such as customer1.orders.create 
+
+
+PRY RAILS -COOL COMMAND - show-models
+
+HAS MANY THROUGH
+See hotel example = reviews acts a a join table for hotels and guests
+
+
+SEEDING
+
+See hotels example from class
+
+Use rake db:reset
+
+Use 
+
+
+WEEK 6 
+
+Homework review - Niall
+
+Form helpers - look up form.collection_select - way to populate a drop-down with values from a model ( to report an attack for a specific cow and person)
+
+look up nested routes (possible way to do what I wanted to add - add a favourite for a specific user)
+
+look up image tag helper ( way to link to images)
+
+NB: when adding e.g. songs to an artist, you need to save if the database query is not being run (easy to see this in the console)
+
+
+Validation
+
+Cool way to check errors on validation ( put 
+
+
+
+  validates :title, presence: :true
+
+
+
+in the model first)
+
+
+[62] pry(main)> s1 = Song.new
+=> #<Song:0x007fb1de49e930 id: nil, title: nil, artist_id: nil, created_at: nil, updated_at: nil>
+[63] pry(main)> s1.valid?
+=> false
+[64] pry(main)> s1 = Song.create
+   (0.2ms)  BEGIN
+   (0.2ms)  ROLLBACK
+=> #<Song:0x007fb1de374168 id: nil, title: nil, artist_id: nil, created_at: nil, updated_at: nil>
+[65] pry(main)> s1.errors
+=> #<ActiveModel::Errors:0x007fb1db99f568
+ @base=#<Song:0x007fb1de374168 id: nil, title: nil, artist_id: nil, created_at: nil, updated_at: nil>,
+ @messages={:title=>["can't be blank"]}>
+[66] pry(main)> 
+
+ <%= link_to add_favourite_url(url: media.media_url), class: 'fav-img', method: :put do %>
+     <i class="fa fa-star fa-2x"></i>
+  <% end %>
+
+
+PARTIALS
+
+Look at Mathilda’s turn example in the songs index view
+
+Uncompleted - 
+
+1/ display errors on song new page 
+2/ introduce partial - see M’s example
+
+###WEEK 6 DAY 2
+
+
+*NB look up request response cycle (diagram of)
+
+ROBOT LAB
+
+NB: useful gems - see gem file in debugging app
+
+Good example of using attire_reader and initialize
+
+NB: read lesson notes from week4
+
+DEBUGGING
+
+Use cat log/development.log or tail -25 log/development.log   to see your log
+
+if you want puts messages to show up use logger.debug
+ 
+
+CODE - ALONG  - graffiti app
+
+Uses carrier wave gem
+
+DAY3
+
+To make a ruby method a class method use def self.method
+
+question- what is difference between : before or after
+
+TESTING (TDD) AND WORKING WITH MODELS IN RAILS (i.e. putting the logic in the model)
+
+NB: during testing the server isn’t even running
+
+
+triptastic app
+
+remember to add pry-rails to gem file
+
+gem ‘rspec-rails’
+
+generate spec folder
+
+rails g rspec:install
+
+Look at spec_helper and customise ( see Jeremy’s example)
+comment out config.disable_monkey_patching
+
+Look at rails_helper. Don’t include requires until after line 7
+
+You can create an association when generating a model. Include hotel:references in the model g …. command
+eg. model g review rating description hotel:references
+
+Use context blocks -see example
+
+Use show-models in rails console to see model
+
+Using ‘self’ in models method definition
+
+Using method review.non? / reviews.empty?
+
+Capybara
+
+Feature testing
+https://github.com/jnicklas/capybara
+
+still using hotel example
+
+Digression on views - should never talk directly to the model, always through the controller. This does not mean you can’t call on methods such as view_helpers or helpers you have written yourself (in the helpers folder)
+
+
+NESTED RESOURCES!! - put resources within each other in routes file
+Missing keys error
+
+new_hotel_review_path(@hotel) ( fix missing keys error by passing instance variable as parameter)
+
+Note that the form then need to be for two instance variables, not one, and in the controller you define the two instance variables ( and in the example you had to write Hotel.find(params[:hotel_id]) not just id (check your routes!!!!)
+
+
+PROJECT
+
+Use TTD - capybara - features testing
+
+Use git
+
+Use http party ( what is it for)
+
+Day 4
+
+CSS FRAMEWORKS
+
+Foundation
+
+###Three ways of doing it:
+
+CDN
+
+Rails gem
+
+Download it
+
+Copy and paste html for eg. nav bar
+Overiding CSS
+Grids - offsets 
+ 
+ 
+### ##Maps API
+
+Look at Jeremy's triptastic app 
+
+Use geocoder to get lat and longitude
+
+Use snazzy maps
+
+###WEEK 7 DAY 3
+
+(Alex)
+
+###Discussion of scope and 'this'
+
+Functions are always invoked on something else. Whatever that is is 'this'
+
+.bind(obj) and .call(obj) change this to whatever is specified
+
+###Node
+
+peerflix (npm install peerflix -g)
+movie magnet
+popcorn time
+
+advantages of node
+asynchronous - faster because it can deal with multiple queries
+
+advantages of rails
+great for rapid prototyping
+ActiveRecord is great
+
+node works really well with MongoDB
+
+
+Still use rails for ceratin thinss
+Rails useful to build a very quick API
+Sinatra useful for a quick website ( or Express)
+
+Intro to node
+Look at modules - variables have to be specifically exported else they are not accessible in the scope of another file that calls it. 
+
+###Node packages
+npm init / create package.json
+Equivalent to gemfile in a rails project
+
+Class lab -see Alex's example code - exporting a module into a file
+
+EXPRESS
+A node framework. the sinatra of node.
+
+Saw how to set up an http server on a certain point
+
+Two packages that express works well with - JADE ( similar to haml) and jrb (aimilar to js)
+
+You would use express/node rather than rails/ruby when you want to use a nosql server and when you would expect a lot of requests (advantage of asyncronous)
+
+
+install express locally
+
+npm install express --save
+
+or maybe 
+
+npm install --save express 
+
+
+Middleware - logging. Use next.
+
+
+###Outcomes talk - Building a digital presence 
+
+Use twitter with tweetdeck - follows users and hashtags
+
+Static site generator - markdown on github pages
+
+Summarize yourself in a tweet - use as your description on twitter
+
+Look up Clojure, Emacs
+
+@jR0cket
+
+###Homework - Node express/AJAX - eatly app
+
+-look at Jeremy's solution - namespacing. 
+
+NB: Do not use .success in jquery ( for AJAX requests), Use done/fail/always instead
+
+###NoSQL and MONGO dbs
+Used for faster applications - real time
+
+SQL                  Mongo
+database            database
+table               collection
+rows                documents
+columns             fields
+joins               no joins(!)
+
+db.people.find({age:{ $gt : 50}})
+
+MANUAL : http://docs.mongodb.org/manual/reference/operator/query/
+
+No notes about mongoose ( I think mongoose is to mongo what active record is to SQL) see family tree lab ( classwork)
+
+
+###My notes/questions on the node express animal shelter homework
+
+learning points
+1. specify 'instance variables' thus :
+
+  res.render('index.ejs', {
+    animals: allAnimals
+  });
+2. use new:true
+3. Don't put methods without brackets in an ejs file - puts in the function, not the value 
+
+questions:
+6. so far I haven't been using res.send (instead I've just been using res.render and passing variables to an ejs template) - how should I use res.send in the context of this homework? ( answer: res.send isn't used that much).
+
+9. I can add a new animal and it appends to the page and is returned from the mongoose callback, but when I do db. animals.find() it's not returned and I'm not sure why
+
+### WEEK 8 DAY 1
+
+####Homework review
+
+* Set up a router to handle multiple resources
+
+* Middleware (eg. method override) modifies the request before it hits the routes. Sits at the 'entry' to the server. For this reason it is dangerous.
+
+* Method override deletes the default method of a form from 'post' to 'delete'. Uses a hidden input. See git hub page.
+
+* Use Enum to specify what options a string input can have (in the schema)
+
+* look at Jeremy's markup to see a much better version of my routes ( eg the index route) passing the local variables (like instance variable in rails) to the view 
+
+### Embdedded models.
+
+See classwork - airport
+
+Sams-MacBook-Pro(mongod-3.0.6) heathrow-express> db.airports.find()
+{
+  "_id": ObjectId("56092789990d3559177bfebe"),
+  "name": "London Heathrow",
+  "country": "England",
+  "code": "LHR",
+  "terminals": [
+    {
+      "name": "Terminal 1",
+      "capacity": 9800000,
+      "_id": ObjectId("56092789990d3559177bfebf")
+    }
+  ],
+  "__v": 0
+}
+
+Disadvantage of embdedding is that the collection could end up getting REALLY large. See referencing.
+
+###Referencing - see example - airports referenced within flights
+Use populate to return details of the reference item
+
+Referencing is a bit more difficult and you will use it less but has advantage that the collection doesn't get full up.
+
+###Deployment
+
+Good domain reg sites
+* gandi.net
+* tcohost
+* ukreg
+
+###Week 8 Day 2: Authentication
+Using passport
+Homework:
+Question - what does .use mean? ( general question about Express)
+Couldn't get the homework to work. Come back to it.
+
+####Useful authentication resources:
+- http://passportjs.org/docs/username-password
+- https://github.com/jaredhanson/passport-local
+- https://scotch.io/tutorials/easy-node-authentication-setup-and-local
+
+Question what is diff btw a router and a controller?
+
+Two sites that allow you to search all docs or a range of docs at the same time:
+- devdocs
+- dash
+
+Chat homework
+
+## Week 8 day 4
+
+- Jade - alternative templating language for express. Did a lab on this - make a front end for an api
+
+- mustache js - for client side templating. Did a lab on this.
+
+- underscore - utitlity methods for js 
+	useful methis include uniq, pluck, range, intersection, _.values, default, flatten, first, last. Underscore also does templating. Can use undersore on the server side.
+
+- Use mustache and underscore in projects from now on.
+
+###Git tutorials
+
+- git diff HEAD << diff between current and last commit>>??
+- git diff --staged << diff betweeen ??
+- git reset <<unstage staged files>>
+- git checkout <<revert to last commit>>
+- git checkout (branch) - switch to branch
+
+## Week 8 day 5
+
+###Git
+
+git branch <name> - create new branch
+
+git branch - see all branches
+
+git checkout <name> - switch to branch
+
+git checkout -b <name> - create and swithc branch on one go
+
+###TDD for JS - Jasmin
+
+BDD - behaviour driven development.
+
+Jasmine can be used for feature and unit testing
+
+Set up jasmine using mode-jasmin. Various options - alias, growl, verbose, color, --sutotest(autotest can be flakey)
+
+Use library 'request' to make requests so that you can test the api ( node version of http party)
+
+See Jeremy's beers example
+
+The equivalent to capybara is zombie.js (can test the front end whereas Jasmin was just testing the api).
+
+####Angular
+
+Point is about architecture - splitting the front end out and making it more modular. Brings MVC to the front end.
+
+###Module
+- Services
+--provider
+--factory
+- Config
+--Routes
+- Filter
+- Directives
+- Controller
+
+In a sense you can see services, provider and factory as models.
+
+Views are just html.
+
+Eveything is based around json and ajax requests.
+
+See 'intro to angular ' example.
+
+Two ways of sending data from controllor to the view  - $scope and as this. We are covering as this more.
+
+###Directives
+
+* NG-REPEAT
+
+* NG-IF (show and hide)
+
+* Form - NG-MODEL
+
+###Promises
+
+Serve promises to give you something when you make a request. This is how we deal with async stuff. 
+
+Built into JS. JQ version is called JQ deferred.
+
+Node library for promises is called Bluebird.Angular library is $q (built in)
+
+Resolving, rejecting
+
+Questions
+=========
+1/ .then - and you can you use it anywhere or just with promises?
+2/ .exec - ?????
+3/ are mongoose functions all promise objects? - yes 
+what is the diff btw this and a callback function - promises are a type of callback function
+
+###Factories - see example in lesson notes
+
+
+###Client side routing
+ng-route - not going to use this 
+
+will use ui router  third party product that handles states
+
+### Custom directive - card example (cards against humanity). Scope
+
+###Project ideas
+Tate explorer
+Swing skillshare online
+
+###Outcomes talk - James Gill from goSquared
+
+@JamesJGill -twitter
+
+Meet ups - Built in London
+Hacker NEws London
+
+Videos - How to start a startup - Stanford University
+
+Programs - sketch, keynote, marvel/invision
+vwd/optimizely
+framer / keynote
+
